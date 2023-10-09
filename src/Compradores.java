@@ -2,14 +2,14 @@
 public abstract class Compradores {
 	
 	public String nome;
-	public int matricula;
+	public int indentificacao;
 	public CachorroQuente hotdog;
 	public float preco;
 	
-	public Compradores(String nome, int matricula) {
+	public Compradores(String nome, int indentificacao) {
 		this.nome = nome;
 		
-		this.matricula = matricula;
+		this.indentificacao = indentificacao;
 		
 		hotdog = new CachorroQuente();
 	}
