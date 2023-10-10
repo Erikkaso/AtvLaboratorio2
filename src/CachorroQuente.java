@@ -1,39 +1,31 @@
+import java.util.ArrayList;
 
 public class CachorroQuente {
-	public String[] proteina;
-	
-	public String[] queijo;
-	
-	public String[] ingredientes;
-	
-	public String[] bebida;
-	
-	public int idProteina, idQueijo, idBebida;
-	public int[] idIngredientes = new int[4];
+	public ArrayList<Ingrediente> ingredientes;
+	public Ingrediente proteinaSelecionada;
+	public Ingrediente queijoSelecionada;
+	public Ingrediente adcionaisSelecionada;
+	public Ingrediente bebidaSelecionada;
 	
 	public CachorroQuente() {
+		ingredientes = new ArrayList<>();
+		ingredientes.add(new Proteina("Salsicha", 1, 2));
+		ingredientes.add(new Proteina("Linguca", 1, 3));
+		ingredientes.add(new Proteina("Frango", 1, 2.5));
+		ingredientes.add(new Proteina("Bacon", 1, 3.5));	
 		
-		proteina = new String[4];
-		proteina[0] = "Salsicha";
-		proteina[1] = "Linguca";
-		proteina[2] = "Frango";
-		proteina[3] = "Bacon";
+		ingredientes.add(new Queijo("Mussarela", 2, 2));
+		ingredientes.add(new Queijo("Prato", 2, 2.75));
+		ingredientes.add(new Queijo("Parmesao", 2, 3));
+		ingredientes.add(new Queijo("Coalho", 2, 1));
 		
-		queijo = new String[4];
-		queijo[0] = "Mussarela";
-		queijo[1] = "Prato";
-		queijo[2] = "Parmesao";
-		queijo[3] = "Coalho";
+		ingredientes.add(new Adcionais("Maionese", 3, 1.5));
+		ingredientes.add(new Adcionais("Ketchup", 3, 1.5));
+		ingredientes.add(new Adcionais("Ovo", 3, 3));
+		ingredientes.add(new Adcionais("Batata Palha", 3, 5));
 		
-		ingredientes = new String[4];
-		ingredientes[0] = "maionese";
-		ingredientes[1] = "ketchup";
-		ingredientes[2] = "ovo";
-		ingredientes[3] = "batata palha";
-		
-		bebida = new String[3];
-		bebida[0] = "Coca Cola";
-		bebida[1] = "Delrio";
-		bebida[2] = "Suco do Chaves";
+		ingredientes.add(new Bebida("Coca Cola", 4, 4.5));
+		ingredientes.add(new Bebida("Delrio", 4, 3));
+		ingredientes.add(new Bebida("Suco do Chaves", 4, 2.5));
 	}
 }

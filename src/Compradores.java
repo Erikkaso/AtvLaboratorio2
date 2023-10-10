@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 
 public abstract class Compradores {
 	
 	public String nome;
 	public int indentificacao;
-	public CachorroQuente hotdog;
+	public ArrayList<CachorroQuente> hotdog;
 	public float preco;
 	
 	public Compradores(String nome, int indentificacao) {
@@ -11,6 +12,6 @@ public abstract class Compradores {
 		
 		this.indentificacao = indentificacao;
 		
-		hotdog = new CachorroQuente();
+		hotdog = new ArrayList<>();
 	}
 }

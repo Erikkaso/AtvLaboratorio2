@@ -1,10 +1,16 @@
 
 public abstract class Ingrediente {
 	String nome;
-	float preco;
+	int id;
+	double preco;
 	
-	public Ingrediente(String nome, float preco) {
+	public Ingrediente(String nome, int id, double preco) {
 		this.nome = nome;
+		this.id = id;
 		this.preco = preco;
+	}
+	
+	public Ingrediente(int id) {
+		this.id = id;
 	}
 }
