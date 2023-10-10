@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class CachorroQuente {
 	public ArrayList<Ingrediente> ingredientes;
-	public Ingrediente proteinaSelecionada;
-	public Ingrediente queijoSelecionada;
-	public Ingrediente adcionaisSelecionada;
-	public Ingrediente bebidaSelecionada;
+	public Ingrediente[] IngredienteSelecionado;
+
 	
 	public CachorroQuente() {
 		ingredientes = new ArrayList<>();
+		IngredienteSelecionado = new Ingrediente[4];
+
 		ingredientes.add(new Proteina("Salsicha", 1, 2));
 		ingredientes.add(new Proteina("Linguca", 1, 3));
 		ingredientes.add(new Proteina("Frango", 1, 2.5));

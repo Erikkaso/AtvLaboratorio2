@@ -33,7 +33,7 @@ public class Venda {
 
 			System.out.println("Se quiser registrar outro cliente selecione 1, caso contrario aperte qualquer valor");
 			aux = input.nextInt();
-			if (aux == 1)
+			if (aux != 1)
 				done = true;
 		}
 
@@ -61,7 +61,7 @@ public class Venda {
 					System.out.println((i + 1) + ". " + hotdog.ingredientes.get(i).nome);
 			}
 			idSelect = input.nextInt() - 1;
-			compradores.get(aux).hotdog.get(j).proteinaSelecionada = hotdog.ingredientes.get(idSelect);
+			compradores.get(aux).hotdog.get(j).IngredienteSelecionado[0] = hotdog.ingredientes.get(idSelect);
 
 			System.out.println("Escolha o queijo");
 			for (int i = 0; i < hotdog.ingredientes.size(); i++) {
@@ -69,7 +69,7 @@ public class Venda {
 					System.out.println((i - 3) + ". " + hotdog.ingredientes.get(i).nome);
 			}
 			idSelect = input.nextInt() - 1;
-			compradores.get(aux).hotdog.get(j).queijoSelecionada = hotdog.ingredientes.get(idSelect + 4);
+			compradores.get(aux).hotdog.get(j).IngredienteSelecionado[1] = hotdog.ingredientes.get(idSelect + 4);
 
 			System.out.println("Escolha o adcional");
 			for (int i = 0; i < hotdog.ingredientes.size(); i++) {
@@ -77,7 +77,7 @@ public class Venda {
 					System.out.println((i - 7) + ". " + hotdog.ingredientes.get(i).nome);
 			}
 			idSelect = input.nextInt() - 1;
-			compradores.get(aux).hotdog.get(j).adcionaisSelecionada = hotdog.ingredientes.get(idSelect + 8);
+			compradores.get(aux).hotdog.get(j).IngredienteSelecionado[2] = hotdog.ingredientes.get(idSelect + 8);
 
 			System.out.println("Escolha a bebida");
 			for (int i = 0; i < hotdog.ingredientes.size(); i++) {
@@ -85,34 +85,18 @@ public class Venda {
 					System.out.println((i - 11) + ". " + hotdog.ingredientes.get(i).nome);
 			}
 			idSelect = input.nextInt() - 1;
-			compradores.get(aux).hotdog.get(j).bebidaSelecionada = hotdog.ingredientes.get(idSelect + 12);
-		}
-
-		// System.out.println("O valor final eh:" + compradores.get(aux).preco);
+			compradores.get(aux).hotdog.get(j).IngredienteSelecionado[3] = hotdog.ingredientes.get(idSelect + 12);
+			CalcularPreco(compradores.get(aux), j);
+		}	
+		System.out.println("Preco: "+ dinheiroTotal);
 	}
 
-//	public void CalcularPreco(Compradores c) {
-//		for (int i = 0; i < 4; i++) {
-//			if (c.hotdog.idProteina == 0)
-//				c.preco += 2;
-//			if (c.hotdog.idProteina == 1)
-//				c.preco += 3;
-//			if (c.hotdog.idProteina == 2)
-//				c.preco += 2.5;
-//			if (c.hotdog.idProteina == 3)
-//				c.preco += 3.5;
-//
-//			if (c.hotdog.idQueijo == i)
-//				c.preco += 5 + (i * 2);
-//
-//			if (c.hotdog.idBebida == i)
-//				c.preco += 5 + (i * 3);
-//
-//			if (i != 4) {
-//				if (c.hotdog.idIngredientes[0] == i)
-//					c.preco += (i * 3);
-//			}
-//		}
-//		dinheiroTotal += c.preco;
-//	}
+	public void CalcularPreco(Compradores c, int aux) {
+		for (int i = 0; i < 4; i++) {
+			c.preco += c.hotdog.get(aux).IngredienteSelecionado[i].preco;
+			System.out.println("aa"+c.preco);
+			System.out.println(dinheiroTotal);
+		}
+		dinheiroTotal += c.preco;
+	}
 }

@@ -9,8 +9,5 @@ public abstract class Ingrediente {
 		this.id = id;
 		this.preco = preco;
 	}
-	
-	public Ingrediente(int id) {
-		this.id = id;
-	}
 }
+
